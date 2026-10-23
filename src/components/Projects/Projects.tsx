@@ -5,6 +5,11 @@ import Link from "next/link";
 import { projects } from "./data";
 import ProjectCard from "./ProjectCard/ProjectCard";
 import { shuffleProjects } from "./helpers";
+import {
+  DropInItem,
+  SlideInSection,
+  StaggerContainer,
+} from "@/common/MotionWrapper/MotionWrapper";
 
 const FEATURED_PROJECT_COUNT = 3;
 
@@ -21,8 +26,10 @@ export default function Projects() {
   }, []);
 
   return (
-    <section
-      id="projects"
+    <SlideInSection
+      direction="right"
+      transition={{ duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+      sctionId="projects"
       aria-labelledby="projects-heading"
       className="relative overflow-hidden bg-[#0b2c1d] py-20 text-white sm:py-24 lg:py-32"
     >
@@ -63,16 +70,31 @@ export default function Projects() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <StaggerContainer
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3"
+          delayChildren={0.5}
+          staggerBy={0.3}
+        >
           {featuredProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+            <DropInItem
+              key={project.slug}
+              transition={{
+                duration: 1,
+                ease: "easeOut",
+              }}
+              className=""
+              direction="up"
+              distance={50}
+            >
+              <ProjectCard key={project.slug} project={project} />
+            </DropInItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         <p className="mt-8 text-xs leading-6 text-white/45">
           Project information and media should be verified before publication.
         </p>
       </div>
-    </section>
+    </SlideInSection>
   );
 }

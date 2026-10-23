@@ -1,8 +1,13 @@
+import { SlideInSection } from "@/common/MotionWrapper/MotionWrapper";
 import Link from "next/link";
 
 export const AboutFinalCTA = () => {
   return (
-    <section className="bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-12">
+    <SlideInSection
+      direction="left"
+      className="bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-12"
+      transition={{ duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+    >
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-sm bg-[#123c2d] px-7 py-10 text-white sm:px-12 sm:py-14 lg:px-16 lg:py-16">
         <div
           aria-hidden="true"
@@ -34,6 +39,6 @@ export const AboutFinalCTA = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </SlideInSection>
   );
 };

@@ -1,10 +1,15 @@
 import Image from "next/image";
 import { whatWeDoAssets } from "../../../../public/index";
 import { values } from "../data";
+import { SlideInSection } from "@/common/MotionWrapper/MotionWrapper";
 
 export const AboutOurCommitments = () => {
   return (
-    <section className="relative isolate overflow-hidden bg-[#0b2b20] px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-12 lg:py-32">
+    <SlideInSection
+      direction="left"
+      className="relative isolate overflow-hidden bg-[#0b2b20] px-5 py-20 text-white sm:px-8 sm:py-28 lg:px-12 lg:py-32"
+      transition={{ duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+    >
       <Image
         src={whatWeDoAssets.projectManagementImage}
         alt=""
@@ -56,6 +61,6 @@ export const AboutOurCommitments = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SlideInSection>
   );
 };

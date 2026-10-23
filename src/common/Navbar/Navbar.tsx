@@ -22,7 +22,7 @@ export default function Navbar() {
           className="mx-auto flex h-19 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 lg:h-22 lg:px-12"
         >
           <Link
-            href="#home"
+            href="/#home"
             aria-label="WESMILAP home"
             onClick={closeMenu}
             className="relative z-10 flex shrink-0 items-center gap-3"

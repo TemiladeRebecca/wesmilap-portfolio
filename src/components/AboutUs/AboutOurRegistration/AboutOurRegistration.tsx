@@ -1,6 +1,12 @@
+import { SlideInSection } from "@/common/MotionWrapper/MotionWrapper";
+
 export const AboutOurRegistration = () => {
   return (
-    <section className="bg-[#f7f8f5] px-5 py-16 sm:px-8 lg:px-12">
+    <SlideInSection
+      direction="right"
+      className="bg-[#f7f8f5] px-5 py-16 sm:px-8 lg:px-12"
+      transition={{ duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+    >
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#9b7927]">
@@ -40,6 +46,6 @@ export const AboutOurRegistration = () => {
           </p>
         </div>
       </div>
-    </section>
+    </SlideInSection>
   );
 };

@@ -1,8 +1,13 @@
+import { SlideInSection } from "@/common/MotionWrapper/MotionWrapper";
 import Link from "next/link";
 
 export const AboutWhoWeAre = () => {
   return (
-    <section className="px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+    <SlideInSection
+      direction="left"
+      className="px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28"
+      transition={{ duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+    >
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#9b7927]">
@@ -91,6 +96,6 @@ export const AboutWhoWeAre = () => {
           <div className="absolute -bottom-3 -right-3 h-24 w-24 border-b-2 border-r-2 border-[#c6a34a] sm:-bottom-5 sm:-right-5" />
         </div>
       </div>
-    </section>
+    </SlideInSection>
   );
 };
