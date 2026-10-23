@@ -1,8 +1,13 @@
+import { SlideInSection } from "@/common/MotionWrapper/MotionWrapper";
 import Link from "next/link";
 
 export const DiscussProject = () => {
   return (
-    <section className="bg-[#123d2b] px-5 py-16 text-white sm:px-8 sm:py-20 lg:px-12">
+    <SlideInSection
+      direction="left"
+      transition={{ duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+      className="bg-[#123d2b] px-5 py-16 text-white sm:px-8 sm:py-20 lg:px-12"
+    >
       <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xs font-bold tracking-[0.2em] text-[#e6c775] uppercase">
@@ -21,6 +26,6 @@ export const DiscussProject = () => {
           <span aria-hidden="true">↗</span>
         </Link>
       </div>
-    </section>
+    </SlideInSection>
   );
 };

@@ -1,8 +1,13 @@
+import { SlideInSection } from "@/common/MotionWrapper/MotionWrapper";
 import { IProject } from "../../interface";
 
 export const ProjectOverview = ({ project }: { project: IProject }) => {
   return (
-    <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:px-12">
+    <SlideInSection
+      direction="right"
+      transition={{ duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+      className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:px-12"
+    >
       <div>
         <p className="flex items-center gap-3 text-xs font-bold tracking-[0.2em] text-[#99751f] uppercase">
           <span className="h-px w-8 bg-[#d8b45a]" />
@@ -38,6 +43,6 @@ export const ProjectOverview = ({ project }: { project: IProject }) => {
           </p>
         </article>
       </div>
-    </section>
+    </SlideInSection>
   );
 };

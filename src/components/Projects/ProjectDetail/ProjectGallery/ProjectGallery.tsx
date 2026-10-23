@@ -1,11 +1,14 @@
 import Image from "next/image";
 import { stages } from "../../data";
 import { IProject } from "../../interface";
+import { SlideInSection } from "@/common/MotionWrapper/MotionWrapper";
 
 export const ProjectGallery = ({ project }: { project: IProject }) => {
   return (
-    <section
-      id="project-gallery"
+    <SlideInSection
+      direction="left"
+      transition={{ duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+      sctionId="project-gallery"
       aria-labelledby="gallery-heading"
       className="bg-white py-16 sm:py-20 lg:py-24"
     >
@@ -102,6 +105,6 @@ export const ProjectGallery = ({ project }: { project: IProject }) => {
           </p>
         )}
       </div>
-    </section>
+    </SlideInSection>
   );
 };
