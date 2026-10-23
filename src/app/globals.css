@@ -155,6 +155,62 @@
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
+
+  --animate-hero-drift: heroDrift 24s ease-in-out infinite alternate;
+  --animate-blueprint-move: blueprintMove 30s linear infinite;
+  --animate-orbit-rotate: orbitRotate 50s linear infinite;
+  --animate-scan-line: scanLine 8s ease-in-out infinite;
+  --animate-content-reveal: contentReveal 900ms ease-out both;
+
+  @keyframes heroDrift {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+  @keyframes blueprintMove {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 64px 64px;
+    }
+  }
+  @keyframes orbitRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes scanLine {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    15%,
+    80% {
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(75vh);
+      opacity: 0.35;
+    }
+  }
+  @keyframes contentReveal {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 *,
