@@ -1,6 +1,12 @@
+import { SlideInSection } from "@/common/MotionWrapper/MotionWrapper";
+
 export const AboutOurDirection = () => {
   return (
-    <section className="bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+    <SlideInSection
+      direction="right"
+      className="bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28"
+      transition={{ duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#9b7927]">
@@ -64,6 +70,6 @@ export const AboutOurDirection = () => {
           </article>
         </div>
       </div>
-    </section>
+    </SlideInSection>
   );
 };
