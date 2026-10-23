@@ -1,5 +1,10 @@
 import Link from "next/link";
 import { IProject } from "../../interface";
+import {
+  DropInItem,
+  SlideInSection,
+  StaggerContainer,
+} from "@/common/MotionWrapper/MotionWrapper";
 
 export const AllProjects = ({
   project,
@@ -11,7 +16,11 @@ export const AllProjects = ({
   videoCount: number;
 }) => {
   return (
-    <section className="relative isolate overflow-hidden bg-[#0b2c1d] py-16 text-white sm:py-20 lg:py-28">
+    <SlideInSection
+      direction="right"
+      transition={{ duration: 2, ease: [0.21, 0.47, 0.32, 0.98] }}
+      className="relative isolate overflow-hidden bg-[#0b2c1d] py-16 text-white sm:py-20 lg:py-28"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.07] bg-[linear-gradient(rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.2)_1px,transparent_1px)] bg-size-[56px_56px]"
@@ -39,31 +48,66 @@ export const AllProjects = ({
             {project.summary}
           </p>
         </div>
-
-        <div className="mt-10 grid grid-cols-2 gap-6 border-t border-white/15 pt-6 sm:grid-cols-4 sm:gap-8">
-          <div>
+        <StaggerContainer
+          className="mt-10 grid grid-cols-2 gap-6 border-t border-white/15 pt-6 sm:grid-cols-4 sm:gap-8"
+          delayChildren={0.5}
+          staggerBy={0.3}
+        >
+          <DropInItem
+            transition={{
+              duration: 1.5,
+              ease: "easeOut",
+            }}
+            className=""
+            direction="down"
+            distance={80}
+          >
             <p className="text-xs text-white/50">Client</p>
             <p className="mt-2 text-sm font-semibold">{project.client}</p>
-          </div>
+          </DropInItem>
 
-          <div>
+          <DropInItem
+            transition={{
+              duration: 1.5,
+              ease: "easeOut",
+            }}
+            className=""
+            direction="down"
+            distance={80}
+          >
             <p className="text-xs text-white/50">Location</p>
             <p className="mt-2 text-sm font-semibold">{project.location}</p>
-          </div>
+          </DropInItem>
 
-          <div>
+          <DropInItem
+            transition={{
+              duration: 1.5,
+              ease: "easeOut",
+            }}
+            className=""
+            direction="down"
+            distance={80}
+          >
             <p className="text-xs text-white/50">Project year</p>
             <p className="mt-2 text-sm font-semibold">{project.year}</p>
-          </div>
+          </DropInItem>
 
-          <div>
+          <DropInItem
+            transition={{
+              duration: 1.5,
+              ease: "easeOut",
+            }}
+            className=""
+            direction="down"
+            distance={80}
+          >
             <p className="text-xs text-white/50">Project media</p>
             <p className="mt-2 text-sm font-semibold">
               {photoCount} photos · {videoCount} videos
             </p>
-          </div>
-        </div>
+          </DropInItem>
+        </StaggerContainer>
       </div>
-    </section>
+    </SlideInSection>
   );
 };

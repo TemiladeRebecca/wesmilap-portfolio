@@ -21,7 +21,7 @@ export default async function ProjectDetail({
   ).length;
 
   return (
-    <main className="min-h-screen bg-[#f7f8f5] text-[#123d2b]">
+    <main className="min-h-screen bg-[#f7f8f5] text-[#123d2b] overflow-x-hidden">
       <Navbar />
 
       <AllProjects
